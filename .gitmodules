@@ -1,3 +1,7 @@
 [submodule "resume"]
 	path = resume
 	url = git@github.com:BlackDark/Developer-Theme.git
+[submodule "cv-new"]
+	path = cv-new
+	url = git@github.com:BlackDark/Developer-Theme.git
+	branch = alma-cv-pages
