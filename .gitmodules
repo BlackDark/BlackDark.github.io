@@ -1,8 +1,8 @@
 [submodule "cv-new"]
-	path = cv-new
+	path = cv
 	url = git@github.com:BlackDark/Developer-Theme.git
 	branch = alma-cv-pages
 [submodule "resume"]
-	path = resume
+	path = cv-old
 	url = git@github.com:BlackDark/Developer-Theme.git
 	branch = hugo-pages
