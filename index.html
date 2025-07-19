@@ -7,6 +7,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
+    <!-- Preload main CSS and fonts for faster rendering -->
+    <link rel="preload" href="assets/css/main.css" as="style" />
+    <link
+      rel="preload"
+      href="assets/fonts/fontawesome-webfont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="assets/css/main.css" />
     <!--[if lte IE 9
       ]><link rel="stylesheet" href="assets/css/ie9.css"
@@ -86,7 +95,7 @@
 
           <section class="box special">
             <span class="image fit"
-              ><img src="images/cloudistry.png" alt=""
+              ><img src="images/cloudistry.webp" alt="" loading="lazy"
             /></span>
             <h3>Cloudistry (Master thesis)</h3>
             <p>
@@ -103,7 +112,7 @@
 
           <section class="box special">
             <span class="image fit"
-              ><img src="images/informaticup.jpg" alt=""
+              ><img src="images/informaticup.webp" alt="" loading="lazy"
             /></span>
             <h3>InformatiCup 2017 (2nd place winner)</h3>
             <p>
@@ -128,7 +137,7 @@
 
           <section class="box special">
             <span class="image fit"
-              ><img src="images/webvowl.png" alt=""
+              ><img src="images/webvowl.webp" alt="" loading="lazy"
             /></span>
             <h3>WebVOWL + OWL2VOWL</h3>
             <p>
@@ -153,7 +162,9 @@
           </section>
 
           <section class="box special">
-            <span class="image fit"><img src="images/vita.png" alt="" /></span>
+            <span class="image fit"
+              ><img src="images/vita.webp" alt="" loading="lazy"
+            /></span>
             <h3>VITA (Visual Analytics for Narrative Text)</h3>
             <p>
               The study of novels and the analysis of their plot, characters and
@@ -499,9 +510,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
     <div id="bg"></div>
 
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/jquery.min.js" defer></script>
+    <script src="assets/js/skel.min.js" defer></script>
+    <script src="assets/js/util.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>
