@@ -926,6 +926,16 @@ ul.alt li:first-child {
   padding-top: 0;
 }
 
+ul.sponsor {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.sponsor li {
+  display: inline-block;
+}
+
 ul.icons {
   cursor: default;
   list-style: none;
