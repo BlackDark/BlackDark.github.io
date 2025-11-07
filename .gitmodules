@@ -6,12 +6,12 @@
 	path = cv-old
 	url = git@github.com:BlackDark/Developer-Theme.git
 	branch = hugo-pages
-[submodule "blog/themes/ananke"]
-	path = blog/themes/ananke
-	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
-[submodule "blog/themes/dream"]
-	path = blog/themes/dream
-	url = https://github.com/g1eny0ung/hugo-theme-dream.git
 [submodule "blog/themes/tailwind"]
 	path = blog/themes/tailwind
-	url = https://github.com/tomowang/hugo-theme-tailwind.git
+	url = git@github.com:tomowang/hugo-theme-tailwind.git
+[submodule "blog/themes/dream"]
+	path = blog/themes/dream
+	url = git@github.com:g1eny0ung/hugo-theme-dream.git
+[submodule "blog/themes/ananke"]
+	path = blog/themes/ananke
+	url = git@github.com:theNewDynamic/gohugo-theme-ananke.git
