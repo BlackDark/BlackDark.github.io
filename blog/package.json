@@ -1,0 +1,41 @@
+{
+  "name": "blackdark.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eduard Marbach",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "7.1.0",
+    "@tailwindcss/postcss": "4.1.16",
+    "@tailwindcss/typography": "0.5.19",
+    "alpinejs": "3.15.1",
+    "hugo-bin": "0.149.2",
+    "tailwindcss": "4.1.16"
+  },
+  "devDependencies": {
+    "postcss": "8.5.6",
+    "postcss-cli": "11.0.1",
+    "prettier": "3.6.2",
+    "prettier-plugin-go-template": "0.0.15",
+    "prettier-plugin-tailwindcss": "0.7.1",
+    "rimraf": "6.1.0"
+  },
+  "scripts": {
+    "build": "hugo --minify",
+    "clean": "rimraf public/",
+    "dev": "hugo server",
+    "start": "pnpm dev"
+  },
+  "hugo-bin": {
+    "buildTags": "extended"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "hugo-bin"
+    ],
+    "onlyBuiltDependencies": [
+      "hugo-bin"
+    ]
+  }
+}

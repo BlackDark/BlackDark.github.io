@@ -1,0 +1,80 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+          cache-dependency-path: blog/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: blog
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Hugo blog
+        working-directory: blog
+        run: pnpm build
+
+      - name: Copy root files to public directory
+        run: |
+          cp -r index.html blog/public/
+          cp -r assets blog/public/
+          cp -r images blog/public/
+          cp -r files blog/public/
+          cp -r cv blog/public/
+          cp -r cv-old blog/public/
+          cp CNAME blog/public/ 2>/dev/null || true
+          cp favicon.ico blog/public/ 2>/dev/null || true
+          cp google88ed36057e6e08c2.html blog/public/ 2>/dev/null || true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: blog/public/
+
+  deploy:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

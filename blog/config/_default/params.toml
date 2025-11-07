@@ -1,0 +1,86 @@
+# SEO keywords and description for your site.
+keywords = "Eduard Marbach, software developer, portfolio, blog"
+subtitle = "Eduard Marbach - Personal Website"
+
+# dir name of your blog content (default is `content/posts`).
+# the list of set content will show up on your index page (baseurl).
+contentTypeName = "post"
+
+jsonLD = true
+
+showAuthor = true
+
+[author]
+  name = "Eduard Marbach"
+  email = "your-email@example.com"
+
+[header]
+  logo = "logo.svg"
+  title = "Eduard Marbach"
+
+[footer]
+  since = 2025
+  poweredby = true
+
+# giscus is comments system powered by GitHub Discussions
+# generate configurations from https://giscus.app/
+[giscus]
+  enabled = true
+  repo = "BlackDark/BlackDark.github.io"
+  repoID = "R_kgDOH2k7VQ"
+  category = "General"
+  categoryID = "DIC_kwDOH2k7Vc4Cxjf5"
+  mapping = "pathname"
+  strict = "0"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "bottom"
+  lang = "en"
+
+[social_media]
+  [[social_media.items]]
+    enabled = false
+    title = 'Facebook'
+    icon = 'brand-facebook'
+    link = 'https://www.facebook.com/'
+
+  [[social_media.items]]
+    enabled = false
+    title = 'X'
+    icon = 'brand-x'
+    link = 'https://x.com/tomo_wang_'
+
+  [[social_media.items]]
+    enabled = false
+    title = 'Instagram'
+    icon = 'brand-instagram'
+    link = 'https://www.instagram.com/'
+
+  [[social_media.items]]
+    enabled = false
+    title = 'LinkedIn'
+    icon = 'brand-linkedin'
+    link = 'https://www.linkedin.com/'
+
+  [[social_media.items]]
+    enabled = true
+    title = 'Github'
+    icon = 'brand-github'
+    link = 'https://github.com/BlackDark'
+
+  [[social_media.items]]
+    enabled = false
+    title = 'Bluesky'
+    icon = 'brand-bluesky'
+    link = 'https://bsky.app/'
+
+[pwa]
+  enabled = true
+  icon = "logo.png"       # should be in assets
+  icon_sizes = [192, 512]
+
+# will be used as the manifest.json file and merge the default one
+# https://developer.mozilla.org/en-US/docs/Web/Manifest
+# https://web.dev/add-manifest/
+[manifest]
+  description = "Eduard Marbach - Personal Website"

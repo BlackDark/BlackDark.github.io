@@ -1,0 +1,11 @@
+[en]
+  languageCode = 'en-US'
+  languageDirection = 'ltr'
+  languageName = 'English'
+  weight = 1
+  [en.menu]
+    [[en.menu.main]]
+      identifier = "post"
+      name = "Blog"
+      pageRef = "post"
+      weight = 10
