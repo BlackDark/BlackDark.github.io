@@ -22,7 +22,7 @@
     "rimraf": "6.1.0"
   },
   "scripts": {
-    "build": "hugo --minify",
+    "build": "hugo --minify -e production",
     "clean": "rimraf public/",
     "dev": "hugo server",
     "start": "pnpm dev"

@@ -15,3 +15,6 @@
 [submodule "blog/themes/ananke"]
 	path = blog/themes/ananke
 	url = git@github.com:theNewDynamic/gohugo-theme-ananke.git
+[submodule "blog/themes/plausible-hugo"]
+	path = blog/themes/plausible-hugo
+	url = git@github.com:divinerites/plausible-hugo.git

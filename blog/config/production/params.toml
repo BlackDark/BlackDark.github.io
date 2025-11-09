@@ -1,0 +1,7 @@
+[plausible]
+  enable = true                             # Whether to enable plausible tracking
+  domain = "eduard-marbach.de"
+  selfhosted_domain = "plausible.raydak.de"
+  outbound_link = true
+  file_downloads = true
+  gitstar = false

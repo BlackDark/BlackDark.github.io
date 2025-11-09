@@ -37,6 +37,10 @@ showAuthor = true
   inputPosition = "bottom"
   lang = "en"
 
+[plausible]
+  enable = false
+  gitstar = false
+
 [social_media]
   [[social_media.items]]
     enabled = false
