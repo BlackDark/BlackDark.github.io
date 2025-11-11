@@ -15,6 +15,7 @@ categories = [
     "devops",
     "kubernetes",
 ]
+image = "images/redhatopenshift.svg"
 +++
 
 Provisioning an OpenShift cluster is just the beginning. The real challenge is transforming a freshly deployed cluster with default settings into a production-ready environment that meets your organization's requirements. In this guide, I'll show you how to automate this process using Configuration as Code principles with Kustomize and SOPS.
