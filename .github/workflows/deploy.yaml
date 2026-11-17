@@ -17,9 +17,8 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 env:
-  # actionlint-local-archive
-  ACTIONLINT_VERSION: "v1.7.12"
-  ACTIONLINT_SHA256: "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8"
+  # renovate: datasource=github-releases depName=rhysd/actionlint
+  ACTIONLINT_VERSION: "1.7.12"
   # renovate: datasource=npm depName=renovate
   RENOVATE_VERSION: "44.221.1"
 
@@ -103,10 +102,12 @@ jobs:
         with:
           node-version: 26.13.1
           package-manager-cache: false
-      - run: |
-          archive="actionlint_${ACTIONLINT_VERSION#v}_linux_amd64.tar.gz"
-          curl -fsSLo "$archive" "https://github.com/rhysd/actionlint/releases/download/${ACTIONLINT_VERSION}/${archive}"
-          echo "${ACTIONLINT_SHA256}  ${archive}" | sha256sum --check
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          archive="actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          gh release download "v${ACTIONLINT_VERSION}" --repo rhysd/actionlint --pattern "$archive"
+          gh attestation verify "$archive" --repo rhysd/actionlint
           tar -xzf "$archive" actionlint
           ./actionlint -color
       - run: npx --yes --package "renovate@${RENOVATE_VERSION}" -- renovate-config-validator --strict
